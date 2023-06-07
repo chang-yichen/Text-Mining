@@ -37,14 +37,14 @@ def ranking(filter_words, corpus):
     ranks = {}
     for key in df:
         ranks[key] = 0
+    n = 0
     for word in filter_words: 
         if(word in corpus): 
-            n=0
-            i=0
+            i = 0
             for key in ranks:
                 ranks[key] = (n*ranks[key]+feature_df[word][i])/(n+1)
-                i=i+1
-            n = n+1
+                i = i+1
+        n = n+1
     return ranks
 
 
